@@ -231,31 +231,45 @@ loadScripts(document, 'script');</script>
  For a given FlightDescriptor, get information about how the flight can be
  consumed.</div>
 </div>
-<div class="col-first even-row-color"><code>com.google.common.util.concurrent.ListenableFuture&lt;<a href="../Flight.FlightInfo.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceFutureStub.</span><code><a href="../FlightServiceGrpc.FlightServiceFutureStub.html#getFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">getFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
+<div class="col-first even-row-color"><code><a href="../Flight.FlightInfo.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingV2Stub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingV2Stub.html#getFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">getFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
 <div class="col-last even-row-color">
 <div class="block">
  For a given FlightDescriptor, get information about how the flight can be
  consumed.</div>
 </div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceStub.</span><code><a href="../FlightServiceGrpc.FlightServiceStub.html#getFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor,io.grpc.stub.StreamObserver)" class="member-name-link">getFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request,
- io.grpc.stub.StreamObserver&lt;<a href="../Flight.FlightInfo.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo</a>&gt;&nbsp;responseObserver)</code></div>
+<div class="col-first odd-row-color"><code>com.google.common.util.concurrent.ListenableFuture&lt;<a href="../Flight.FlightInfo.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceFutureStub.</span><code><a href="../FlightServiceGrpc.FlightServiceFutureStub.html#getFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">getFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">
  For a given FlightDescriptor, get information about how the flight can be
  consumed.</div>
 </div>
-<div class="col-first even-row-color"><code>default void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.AsyncService.</span><code><a href="../FlightServiceGrpc.AsyncService.html#getSchema(org.apache.arrow.flight.impl.Flight.FlightDescriptor,io.grpc.stub.StreamObserver)" class="member-name-link">getSchema</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request,
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceStub.</span><code><a href="../FlightServiceGrpc.FlightServiceStub.html#getFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor,io.grpc.stub.StreamObserver)" class="member-name-link">getFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request,
+ io.grpc.stub.StreamObserver&lt;<a href="../Flight.FlightInfo.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo</a>&gt;&nbsp;responseObserver)</code></div>
+<div class="col-last even-row-color">
+<div class="block">
+ For a given FlightDescriptor, get information about how the flight can be
+ consumed.</div>
+</div>
+<div class="col-first odd-row-color"><code>default void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.AsyncService.</span><code><a href="../FlightServiceGrpc.AsyncService.html#getSchema(org.apache.arrow.flight.impl.Flight.FlightDescriptor,io.grpc.stub.StreamObserver)" class="member-name-link">getSchema</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request,
  io.grpc.stub.StreamObserver&lt;<a href="../Flight.SchemaResult.html" title="class in org.apache.arrow.flight.impl">Flight.SchemaResult</a>&gt;&nbsp;responseObserver)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">
+ For a given FlightDescriptor, get the Schema as described in Schema.fbs::Schema
+ This is used when a consumer needs the Schema of flight stream.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../Flight.SchemaResult.html" title="class in org.apache.arrow.flight.impl">Flight.SchemaResult</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingStub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingStub.html#getSchema(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">getSchema</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
 <div class="col-last even-row-color">
 <div class="block">
  For a given FlightDescriptor, get the Schema as described in Schema.fbs::Schema
  This is used when a consumer needs the Schema of flight stream.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="../Flight.SchemaResult.html" title="class in org.apache.arrow.flight.impl">Flight.SchemaResult</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingStub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingStub.html#getSchema(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">getSchema</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingV2Stub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingV2Stub.html#getSchema(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">getSchema</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">
  For a given FlightDescriptor, get the Schema as described in Schema.fbs::Schema
@@ -318,38 +332,45 @@ loadScripts(document, 'script');</script>
  For a given FlightDescriptor, start a query and get information
  to poll its execution status.</div>
 </div>
-<div class="col-first odd-row-color"><code>com.google.common.util.concurrent.ListenableFuture&lt;<a href="../Flight.PollInfo.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceFutureStub.</span><code><a href="../FlightServiceGrpc.FlightServiceFutureStub.html#pollFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">pollFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
+<div class="col-first odd-row-color"><code><a href="../Flight.PollInfo.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingV2Stub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingV2Stub.html#pollFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">pollFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">
  For a given FlightDescriptor, start a query and get information
  to poll its execution status.</div>
 </div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceStub.</span><code><a href="../FlightServiceGrpc.FlightServiceStub.html#pollFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor,io.grpc.stub.StreamObserver)" class="member-name-link">pollFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request,
- io.grpc.stub.StreamObserver&lt;<a href="../Flight.PollInfo.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo</a>&gt;&nbsp;responseObserver)</code></div>
+<div class="col-first even-row-color"><code>com.google.common.util.concurrent.ListenableFuture&lt;<a href="../Flight.PollInfo.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceFutureStub.</span><code><a href="../FlightServiceGrpc.FlightServiceFutureStub.html#pollFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">pollFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request)</code></div>
 <div class="col-last even-row-color">
 <div class="block">
  For a given FlightDescriptor, start a query and get information
  to poll its execution status.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Flight.FlightData.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightData.Builder</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Flight.FlightData.Builder.</span><code><a href="../Flight.FlightData.Builder.html#setFlightDescriptor(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">setFlightDescriptor</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;value)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceStub.</span><code><a href="../FlightServiceGrpc.FlightServiceStub.html#pollFlightInfo(org.apache.arrow.flight.impl.Flight.FlightDescriptor,io.grpc.stub.StreamObserver)" class="member-name-link">pollFlightInfo</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;request,
+ io.grpc.stub.StreamObserver&lt;<a href="../Flight.PollInfo.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo</a>&gt;&nbsp;responseObserver)</code></div>
 <div class="col-last odd-row-color">
+<div class="block">
+ For a given FlightDescriptor, start a query and get information
+ to poll its execution status.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../Flight.FlightData.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightData.Builder</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Flight.FlightData.Builder.</span><code><a href="../Flight.FlightData.Builder.html#setFlightDescriptor(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">setFlightDescriptor</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color">
 <div class="block">
 
  The descriptor of the data.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Flight.FlightInfo.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo.Builder</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Flight.FlightInfo.Builder.</span><code><a href="../Flight.FlightInfo.Builder.html#setFlightDescriptor(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">setFlightDescriptor</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../Flight.FlightInfo.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightInfo.Builder</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Flight.FlightInfo.Builder.</span><code><a href="../Flight.FlightInfo.Builder.html#setFlightDescriptor(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">setFlightDescriptor</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">
 
  The descriptor associated with this info.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Flight.PollInfo.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo.Builder</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Flight.PollInfo.Builder.</span><code><a href="../Flight.PollInfo.Builder.html#setFlightDescriptor(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">setFlightDescriptor</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Flight.PollInfo.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.PollInfo.Builder</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Flight.PollInfo.Builder.</span><code><a href="../Flight.PollInfo.Builder.html#setFlightDescriptor(org.apache.arrow.flight.impl.Flight.FlightDescriptor)" class="member-name-link">setFlightDescriptor</a><wbr>(<a href="../Flight.FlightDescriptor.html" title="class in org.apache.arrow.flight.impl">Flight.FlightDescriptor</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color">
 <div class="block">
 
  The descriptor the client should use on the next try.</div>

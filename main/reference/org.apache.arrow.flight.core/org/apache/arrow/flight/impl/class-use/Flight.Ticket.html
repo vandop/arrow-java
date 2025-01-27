@@ -183,30 +183,37 @@ loadScripts(document, 'script');</script>
  Retrieve a single stream associated with a particular descriptor
  associated with the referenced ticket.</div>
 </div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceStub.</span><code><a href="../FlightServiceGrpc.FlightServiceStub.html#doGet(org.apache.arrow.flight.impl.Flight.Ticket,io.grpc.stub.StreamObserver)" class="member-name-link">doGet</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;request,
- io.grpc.stub.StreamObserver&lt;<a href="../Flight.FlightData.html" title="class in org.apache.arrow.flight.impl">Flight.FlightData</a>&gt;&nbsp;responseObserver)</code></div>
+<div class="col-first even-row-color"><code>io.grpc.stub.BlockingClientCall&lt;?,<wbr><a href="../Flight.FlightData.html" title="class in org.apache.arrow.flight.impl">Flight.FlightData</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingV2Stub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingV2Stub.html#doGet(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">doGet</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;request)</code></div>
 <div class="col-last even-row-color">
 <div class="block">
  Retrieve a single stream associated with a particular descriptor
  associated with the referenced ticket.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Flight.Ticket.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket.Builder</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Flight.Ticket.Builder.</span><code><a href="../Flight.Ticket.Builder.html#mergeFrom(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">mergeFrom</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;other)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Flight.FlightEndpoint.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightEndpoint.Builder</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Flight.FlightEndpoint.Builder.</span><code><a href="../Flight.FlightEndpoint.Builder.html#mergeTicket(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">mergeTicket</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceStub.</span><code><a href="../FlightServiceGrpc.FlightServiceStub.html#doGet(org.apache.arrow.flight.impl.Flight.Ticket,io.grpc.stub.StreamObserver)" class="member-name-link">doGet</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;request,
+ io.grpc.stub.StreamObserver&lt;<a href="../Flight.FlightData.html" title="class in org.apache.arrow.flight.impl">Flight.FlightData</a>&gt;&nbsp;responseObserver)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">
+ Retrieve a single stream associated with a particular descriptor
+ associated with the referenced ticket.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../Flight.Ticket.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket.Builder</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Flight.Ticket.Builder.</span><code><a href="../Flight.Ticket.Builder.html#mergeFrom(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">mergeFrom</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Flight.FlightEndpoint.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightEndpoint.Builder</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Flight.FlightEndpoint.Builder.</span><code><a href="../Flight.FlightEndpoint.Builder.html#mergeTicket(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">mergeTicket</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">
 
  Token used to retrieve this stream.</div>
 </div>
-<div class="col-first odd-row-color"><code>static <a href="../Flight.Ticket.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket.Builder</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Flight.Ticket.</span><code><a href="../Flight.Ticket.html#newBuilder(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">newBuilder</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;prototype)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Flight.FlightEndpoint.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightEndpoint.Builder</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Flight.FlightEndpoint.Builder.</span><code><a href="../Flight.FlightEndpoint.Builder.html#setTicket(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">setTicket</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>static <a href="../Flight.Ticket.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket.Builder</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Flight.Ticket.</span><code><a href="../Flight.Ticket.html#newBuilder(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">newBuilder</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;prototype)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Flight.FlightEndpoint.Builder.html" title="class in org.apache.arrow.flight.impl">Flight.FlightEndpoint.Builder</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Flight.FlightEndpoint.Builder.</span><code><a href="../Flight.FlightEndpoint.Builder.html#setTicket(org.apache.arrow.flight.impl.Flight.Ticket)" class="member-name-link">setTicket</a><wbr>(<a href="../Flight.Ticket.html" title="class in org.apache.arrow.flight.impl">Flight.Ticket</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">
 
  Token used to retrieve this stream.</div>

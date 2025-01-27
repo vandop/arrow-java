@@ -140,15 +140,23 @@ loadScripts(document, 'script');</script>
  addition to the possible ListFlights, GetFlightInfo, DoGet, DoPut
  operations that are potentially available.</div>
 </div>
-<div class="col-first odd-row-color"><code>static io.grpc.MethodDescriptor&lt;<a href="../Flight.Action.html" title="class in org.apache.arrow.flight.impl">Flight.Action</a>,<wbr><a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.</span><code><a href="../FlightServiceGrpc.html#getDoActionMethod()" class="member-name-link">getDoActionMethod</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>com.google.protobuf.Parser&lt;<a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Flight.Result.</span><code><a href="../Flight.Result.html#getParserForType()" class="member-name-link">getParserForType</a>()</code></div>
+<div class="col-first odd-row-color"><code>io.grpc.stub.BlockingClientCall&lt;?,<wbr><a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FlightServiceGrpc.FlightServiceBlockingV2Stub.</span><code><a href="../FlightServiceGrpc.FlightServiceBlockingV2Stub.html#doAction(org.apache.arrow.flight.impl.Flight.Action)" class="member-name-link">doAction</a><wbr>(<a href="../Flight.Action.html" title="class in org.apache.arrow.flight.impl">Flight.Action</a>&nbsp;request)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">
+ Flight services can support an arbitrary number of simple actions in
+ addition to the possible ListFlights, GetFlightInfo, DoGet, DoPut
+ operations that are potentially available.</div>
+</div>
+<div class="col-first even-row-color"><code>static io.grpc.MethodDescriptor&lt;<a href="../Flight.Action.html" title="class in org.apache.arrow.flight.impl">Flight.Action</a>,<wbr><a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FlightServiceGrpc.</span><code><a href="../FlightServiceGrpc.html#getDoActionMethod()" class="member-name-link">getDoActionMethod</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.google.protobuf.Parser&lt;<a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Flight.Result.</span><code><a href="../Flight.Result.html#parser()" class="member-name-link">parser</a>()</code></div>
+<div class="col-first odd-row-color"><code>com.google.protobuf.Parser&lt;<a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Flight.Result.</span><code><a href="../Flight.Result.html#getParserForType()" class="member-name-link">getParserForType</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.google.protobuf.Parser&lt;<a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Flight.Result.</span><code><a href="../Flight.Result.html#parser()" class="member-name-link">parser</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">org.apache.arrow.flight.impl</a> with parameters of type <a href="../Flight.Result.html" title="class in org.apache.arrow.flight.impl">Flight.Result</a></span></div>
 <div class="summary-table three-column-summary">
