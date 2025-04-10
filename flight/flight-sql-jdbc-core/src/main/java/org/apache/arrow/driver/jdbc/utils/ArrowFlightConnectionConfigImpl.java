@@ -208,6 +208,10 @@ public final class ArrowFlightConnectionConfigImpl extends ConnectionConfigImpl 
             headers.put(key.toString(), val.toString());
           }
         });
+
+    // Add User-Agent header (using custom name to avoid conflicts with gRPC/Netty)
+    headers.put("x-arrow-user-agent", UserAgentUtils.getUserAgentString());
+
     return headers;
   }
 
