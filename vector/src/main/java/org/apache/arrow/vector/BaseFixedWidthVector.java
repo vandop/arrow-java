@@ -359,7 +359,7 @@ public abstract class BaseFixedWidthVector extends BaseValueVector
     if (count == 0) {
       return 0;
     }
-    return (count * typeWidth) + getValidityBufferSizeFromCount(count);
+    return (count * typeWidth) + BitVectorHelper.getValidityBufferSizeFromCount(count);
   }
 
   /**
@@ -372,7 +372,7 @@ public abstract class BaseFixedWidthVector extends BaseValueVector
     if (valueCount == 0) {
       return 0;
     }
-    return (valueCount * typeWidth) + getValidityBufferSizeFromCount(valueCount);
+    return (valueCount * typeWidth) + BitVectorHelper.getValidityBufferSizeFromCount(valueCount);
   }
 
   /**
@@ -536,10 +536,10 @@ public abstract class BaseFixedWidthVector extends BaseValueVector
       validityBuffer.writerIndex(0);
       valueBuffer.writerIndex(0);
     } else {
-      validityBuffer.writerIndex(getValidityBufferSizeFromCount(valueCount));
+      validityBuffer.writerIndex(BitVectorHelper.getValidityBufferSizeFromCount(valueCount));
       if (typeWidth == 0) {
         /* specialized handling for BitVector */
-        valueBuffer.writerIndex(getValidityBufferSizeFromCount(valueCount));
+        valueBuffer.writerIndex(BitVectorHelper.getValidityBufferSizeFromCount(valueCount));
       } else {
         valueBuffer.writerIndex((long) valueCount * typeWidth);
       }
@@ -664,7 +664,7 @@ public abstract class BaseFixedWidthVector extends BaseValueVector
       int startIndex, int length, BaseFixedWidthVector target) {
     int firstByteSource = BitVectorHelper.byteIndex(startIndex);
     int lastByteSource = BitVectorHelper.byteIndex(valueCount - 1);
-    int byteSizeTarget = getValidityBufferSizeFromCount(length);
+    int byteSizeTarget = BitVectorHelper.getValidityBufferSizeFromCount(length);
     int offset = startIndex % 8;
 
     if (length > 0) {
