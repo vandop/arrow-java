@@ -118,6 +118,12 @@ implements <a href="ValueVector.html" title="interface in org.apache.arrow.vecto
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#MAX_ALLOCATION_SIZE_PROPERTY" class="member-name-link">MAX_ALLOCATION_SIZE_PROPERTY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="../../../../../org.apache.arrow.memory.core/org/apache/arrow/memory/ArrowBuf.html" title="class in org.apache.arrow.memory">ArrowBuf</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#validityBuffer" class="member-name-link">validityBuffer</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected int</code></div>
+<div class="col-second even-row-color"><code><a href="#valueCount" class="member-name-link">valueCount</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -147,37 +153,49 @@ implements <a href="ValueVector.html" title="interface in org.apache.arrow.vecto
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkBufRefs(org.apache.arrow.vector.ValueVector)" class="member-name-link">checkBufRefs</a><wbr>(<a href="ValueVector.html" title="interface in org.apache.arrow.vector">ValueVector</a>&nbsp;vv)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allocateValidityBuffer(long)" class="member-name-link">allocateValidityBuffer</a><wbr>(long&nbsp;byteSizeTarget)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Allocate new validity buffer for when the bytes need to be copied over.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkBufRefs(org.apache.arrow.vector.ValueVector)" class="member-name-link">checkBufRefs</a><wbr>(<a href="ValueVector.html" title="interface in org.apache.arrow.vector">ValueVector</a>&nbsp;vv)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Checks to ensure that every buffer <code>vv</code> uses has a positive reference count, throws
  if this precondition isn't met.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Release any owned ArrowBuf and reset the ValueVector to the initial state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Alternative to clear().</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyFrom(int,int,org.apache.arrow.vector.ValueVector)" class="member-name-link">copyFrom</a><wbr>(int&nbsp;fromIndex,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyFrom(int,int,org.apache.arrow.vector.ValueVector)" class="member-name-link">copyFrom</a><wbr>(int&nbsp;fromIndex,
  int&nbsp;thisIndex,
  <a href="ValueVector.html" title="interface in org.apache.arrow.vector">ValueVector</a>&nbsp;from)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copy a cell value from a particular index in source vector to a particular position in this
  vector.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyFromSafe(int,int,org.apache.arrow.vector.ValueVector)" class="member-name-link">copyFromSafe</a><wbr>(int&nbsp;fromIndex,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyFromSafe(int,int,org.apache.arrow.vector.ValueVector)" class="member-name-link">copyFromSafe</a><wbr>(int&nbsp;fromIndex,
  int&nbsp;thisIndex,
  <a href="ValueVector.html" title="interface in org.apache.arrow.vector">ValueVector</a>&nbsp;from)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Same as <a href="ValueVector.html#copyFrom(int,int,org.apache.arrow.vector.ValueVector)"><code>ValueVector.copyFrom(int, int, ValueVector)</code></a> except that it handles the case when the
  capacity of the vector needs to be expanded before copy.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyValidityBuffer(int,int,org.apache.arrow.vector.BaseValueVector)" class="member-name-link">copyValidityBuffer</a><wbr>(int&nbsp;startIndex,
+ int&nbsp;length,
+ <a href="BaseValueVector.html" title="class in org.apache.arrow.vector">BaseValueVector</a>&nbsp;target)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Allocate new validity buffer for `target` and copy bytes from `validityBuffer`.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../org.apache.arrow.memory.core/org/apache/arrow/memory/BufferAllocator.html" title="interface in org.apache.arrow.memory">BufferAllocator</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllocator()" class="member-name-link">getAllocator</a>()</code></div>
@@ -217,6 +235,21 @@ implements <a href="ValueVector.html" title="interface in org.apache.arrow.vecto
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../../../org.apache.arrow.memory.core/org/apache/arrow/memory/ArrowBuf.html" title="class in org.apache.arrow.memory">ArrowBuf</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseBuffer(org.apache.arrow.memory.ArrowBuf)" class="member-name-link">releaseBuffer</a><wbr>(<a href="../../../../../org.apache.arrow.memory.core/org/apache/arrow/memory/ArrowBuf.html" title="class in org.apache.arrow.memory">ArrowBuf</a>&nbsp;buffer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sliceAndTransferValidityBuffer(int,int,org.apache.arrow.vector.BaseValueVector)" class="member-name-link">sliceAndTransferValidityBuffer</a><wbr>(int&nbsp;startIndex,
+ int&nbsp;length,
+ <a href="BaseValueVector.html" title="class in org.apache.arrow.vector">BaseValueVector</a>&nbsp;target)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">If the start index is 8 byte aligned, slice `validityBuffer` and transfer ownership to
+ `target`'s `validityBuffer`.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#splitAndTransferValidityBuffer(int,int,org.apache.arrow.vector.BaseValueVector)" class="member-name-link">splitAndTransferValidityBuffer</a><wbr>(int&nbsp;startIndex,
+ int&nbsp;length,
+ <a href="BaseValueVector.html" title="class in org.apache.arrow.vector">BaseValueVector</a>&nbsp;target)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Transfer the validity buffer from `validityBuffer` to the target vector's `validityBuffer`.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -293,6 +326,18 @@ implements <a href="ValueVector.html" title="interface in org.apache.arrow.vecto
 <section class="detail" id="fieldReader">
 <h3>fieldReader</h3>
 <div class="member-signature"><span class="modifiers">protected volatile</span>&nbsp;<span class="return-type"><a href="complex/reader/FieldReader.html" title="interface in org.apache.arrow.vector.complex.reader">FieldReader</a></span>&nbsp;<span class="element-name">fieldReader</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="validityBuffer">
+<h3>validityBuffer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../../org.apache.arrow.memory.core/org/apache/arrow/memory/ArrowBuf.html" title="class in org.apache.arrow.memory">ArrowBuf</a></span>&nbsp;<span class="element-name">validityBuffer</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="valueCount">
+<h3>valueCount</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">valueCount</span></div>
 </section>
 </li>
 </ul>
@@ -513,6 +558,67 @@ implements <a href="ValueVector.html" title="interface in org.apache.arrow.vecto
 <dd><code>fromIndex</code> - position to copy from in source vector</dd>
 <dd><code>thisIndex</code> - position to copy to in this vector</dd>
 <dd><code>from</code> - source vector</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="splitAndTransferValidityBuffer(int,int,org.apache.arrow.vector.BaseValueVector)">
+<h3>splitAndTransferValidityBuffer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">splitAndTransferValidityBuffer</span><wbr><span class="parameters">(int&nbsp;startIndex,
+ int&nbsp;length,
+ <a href="BaseValueVector.html" title="class in org.apache.arrow.vector">BaseValueVector</a>&nbsp;target)</span></div>
+<div class="block">Transfer the validity buffer from `validityBuffer` to the target vector's `validityBuffer`.
+ Start at `startIndex` and copy `length` number of elements. If the starting index is 8 byte
+ aligned, then the buffer is sliced from that index and ownership is transferred. If not,
+ individual bytes are copied.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - starting index</dd>
+<dd><code>length</code> - number of elements to be copied</dd>
+<dd><code>target</code> - target vector</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sliceAndTransferValidityBuffer(int,int,org.apache.arrow.vector.BaseValueVector)">
+<h3>sliceAndTransferValidityBuffer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sliceAndTransferValidityBuffer</span><wbr><span class="parameters">(int&nbsp;startIndex,
+ int&nbsp;length,
+ <a href="BaseValueVector.html" title="class in org.apache.arrow.vector">BaseValueVector</a>&nbsp;target)</span></div>
+<div class="block">If the start index is 8 byte aligned, slice `validityBuffer` and transfer ownership to
+ `target`'s `validityBuffer`.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - starting index</dd>
+<dd><code>length</code> - number of elements to be copied</dd>
+<dd><code>target</code> - target vector</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="copyValidityBuffer(int,int,org.apache.arrow.vector.BaseValueVector)">
+<h3>copyValidityBuffer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copyValidityBuffer</span><wbr><span class="parameters">(int&nbsp;startIndex,
+ int&nbsp;length,
+ <a href="BaseValueVector.html" title="class in org.apache.arrow.vector">BaseValueVector</a>&nbsp;target)</span></div>
+<div class="block">Allocate new validity buffer for `target` and copy bytes from `validityBuffer`. Precise details
+ in the comments below.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - starting index</dd>
+<dd><code>length</code> - number of elements to be copied</dd>
+<dd><code>target</code> - target vector</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="allocateValidityBuffer(long)">
+<h3>allocateValidityBuffer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">allocateValidityBuffer</span><wbr><span class="parameters">(long&nbsp;byteSizeTarget)</span></div>
+<div class="block">Allocate new validity buffer for when the bytes need to be copied over.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>byteSizeTarget</code> - desired size of the buffer</dd>
 </dl>
 </section>
 </li>
